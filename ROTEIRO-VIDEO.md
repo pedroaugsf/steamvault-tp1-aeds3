@@ -7,7 +7,7 @@ aba para os trechos visuais.
 
 ## 0:00 — 0:50 · Abertura e escolha da base
 
-- Nome, matrícula, disciplina, etapa.
+- Pedro Augusto Silva Ferreira e Breno Moreira Cortez, matrículas, disciplina, etapa.
 - **Por que a Steam:** a base cobre os cinco tipos de campo exigidos sem inventar coluna.
 - Mostrar a tabela de mapeamento (README §2 ou a seção do site): fixo → `faixaJogadores`,
   variável → `nome` e `desenvolvedora`, data → `dataLancamento`, lista → `generos` com `;`,

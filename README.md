@@ -6,6 +6,8 @@ APIs públicas.
 
 > Trabalho Prático I — Algoritmos e Estruturas de Dados III
 > Etapa 1: criação da base, manipulação de arquivo sequencial e ordenação externa.
+>
+> **Autores:** Pedro Augusto Silva Ferreira · Breno Moreira Cortez
 
 ---
 
