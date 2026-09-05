@@ -1,0 +1,17 @@
+# Bytecode compilado
+bin/
+
+# Base de dados binária gerada em tempo de execução
+dados/*.db
+dados/*.db.ordenado
+dados/tmp_ordenacao/
+
+# Registros de execução do coletor e dos testes
+dados/*.log
+
+# Arquivos auxiliares
+fontes.tmp
+*.class
+
+# Netlify
+.netlify/
