@@ -12,6 +12,3 @@ dados/*.log
 # Arquivos auxiliares
 fontes.tmp
 *.class
-
-# Netlify
-.netlify/

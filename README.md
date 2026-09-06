@@ -286,20 +286,15 @@ Para regerar os dados que ele embute, depois de carregar a base:
 java -cp bin tp1.coleta.PrepararSite dados/jogos.db 5000
 ```
 
-Para publicar:
+A publicação é automática: o fluxo em `.github/workflows/publicar-site.yml` republica o
+GitHub Pages a cada push que altere `site/`. Nada para rodar na mão.
 
-```bat
-npx netlify-cli login    :: uma vez só, abre o navegador
-publicar.bat             :: cria o site na primeira vez e publica
-```
+**Site no ar:** https://pedroaugsf.github.io/steamvault-tp1-aeds3/
 
-No Linux/macOS, `./publicar.sh`. A URL sai no final como **Website URL**, no formato
-`https://<nome-escolhido>.netlify.app`.
-
-**Domínio próprio.** Depois de comprar o domínio no registrador de sua preferência
-(Registro.br para `.com.br`, Cloudflare ou Namecheap para `.com`/`.dev`), no painel do
-Netlify vá em *Domain management → Add a domain* e siga os registros DNS indicados.
-O certificado HTTPS é emitido automaticamente. O `netlify.toml` não muda.
+**Domínio próprio.** Um subdomínio gratuito de projetos como is-a.dev ou js.org pode apontar
+para este Pages via CNAME. Para um domínio pago (`.com.br` no Registro.br, por exemplo), o
+GitHub Pages aceita domínio customizado em *Settings → Pages → Custom domain*, com HTTPS
+emitido automaticamente.
 
 ---
 
