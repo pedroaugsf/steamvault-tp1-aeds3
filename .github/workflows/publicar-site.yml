@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------------------
+#  Publica a pasta site/ no GitHub Pages a cada push na branch main.
+#
+#  O site é HTML estático puro, sem build: o fluxo apenas empacota a pasta e
+#  entrega ao Pages. Rodar isto no GitHub evita ter que duplicar o site numa
+#  pasta docs/ só para satisfazer o formato antigo de publicação.
+# ---------------------------------------------------------------------------
+name: Publicar site
+
+on:
+  # Publica sozinho quando o site (ou este próprio fluxo) muda.
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/publicar-site.yml'
+  # Permite disparar manualmente pela aba Actions.
+  workflow_dispatch:
+
+# Permissões mínimas para o deploy: ler o código e escrever no Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Uma publicação por vez; se outra começar, a anterior é cancelada.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar o GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empacotar a pasta site/
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Publicar
+        id: deploy
+        uses: actions/deploy-pages@v4
